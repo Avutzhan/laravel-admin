@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+
+    Route::get('/', function () {
+
     return view('main');
 });
 
@@ -38,3 +43,6 @@ Route::get('/about_modex', function () {
 Route::get('/team', function () {
     return view('team');
 })->name('team');
+});
+
+
