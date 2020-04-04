@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+Route::get('/about_technology', function () {
+    return view('about_technology');
+})->name('about_technology');
+
+

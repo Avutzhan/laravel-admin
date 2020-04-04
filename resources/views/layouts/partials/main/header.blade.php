@@ -29,7 +29,7 @@
             <nav class="nav">
                 <a class="nav-link active" href="/">Главная</a>
                 <a class="nav-link" href="#">О ModeX</a>
-                <a class="nav-link" href="#">О Технологии</a>
+                <a class="nav-link" href="{{ route('about_technology') }}">О Технологии</a>
                 <a class="nav-link" href="#projects">Проекты</a>
                 <a class="nav-link" href="#">Команда</a>
                 <a class="nav-link" href="#media_about_us">СМИ о нас</a>
