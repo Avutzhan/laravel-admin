@@ -1,5 +1,5 @@
 <div class="row footer">
-    <div class="col-md-4 contacts">
+    <div class="col-md-4 contacts_footer">
         <h6>СВЯЗАТЬСЯ С НАМИ</h6>
 
         <ul class="nav flex-column">
@@ -27,7 +27,7 @@
         </ul>
     </div>
 
-    <div class="col-md-5 contacts">
+    <div class="col-md-5 contacts_footer">
         <h6>КОНТАКТЫ</h6>
 
         <ul class="list-group list-group-flush">
@@ -39,7 +39,7 @@
         </ul>
     </div>
 
-    <div class="col-md-3 contacts">
+    <div class="col-md-3 contacts_footer">
         <h6>СОЦ.СЕТИ</h6>
 
         <ul class="list-group list-group-flush">

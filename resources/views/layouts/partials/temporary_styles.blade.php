@@ -176,9 +176,9 @@
         background-color: #f8f9fa;
     }
 
-    .contacts .list-group,
-    .contacts .list-group-item,
-    .contacts {
+    .contacts_footer .list-group,
+    .contacts_footer .list-group-item,
+    .contacts_footer {
         background-color: #f8f9fa;
     }
 
