@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
         <!-- Styles -->
-        @include('layouts.partials.temporary_styles');
+        @include('layouts.partials.temporary_styles')
     </head>
     <body>
         @if (Route::has('login'))
@@ -30,39 +30,39 @@
         <!--CONTAINER END-->
         <div class="container">
             <!--HEADER NAVBAR-->
-            @include('layouts.partials.header');
+            @include('layouts.partials.header')
             <!--HEADER NAVBAR END-->
 
             <!--BANNER-->
-            @include('layouts.partials.banner');
+            @include('layouts.partials.banner')
             <!--BANNER END-->
 
             <!--CONSTRUCTION PRINCIPLES-->
-            @include('layouts.partials.construction_principles');
+            @include('layouts.partials.construction_principles')
             <!--CONSTRUCTION PRINCIPLES END-->
 
             <!--PROJECTS-->
-            @include('layouts.partials.projects');
+            @include('layouts.partials.projects')
             <!--PROJECTS END-->
 
             <!--VIDEO-->
-            @include('layouts.partials.video');
+            @include('layouts.partials.video')
             <!--VIDEO END-->
 
             <!--NEWS-->
-            @include('layouts.partials.media_about_us');
+            @include('layouts.partials.media_about_us')
             <!--NEWS END-->
 
             <!--MAP-->
-            @include('layouts.partials.map');
+            @include('layouts.partials.map')
             <!--MAP END-->
 
             <!--CONTACTS-->
-            @include('layouts.partials.contacts');
+            @include('layouts.partials.contacts')
             <!--CONTACTS END-->
 
             <!--FOOTER-->
-            @include('layouts.partials.footer');
+            @include('layouts.partials.footer')
             <!--FOOTER END-->
         </div>
         <!--CONTAINER END-->
