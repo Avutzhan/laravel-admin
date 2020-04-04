@@ -32,7 +32,7 @@
                 <a class="nav-link" href="#">О Технологии</a>
                 <a class="nav-link" href="#projects">Проекты</a>
                 <a class="nav-link" href="#">Команда</a>
-                <a class="nav-link" href="#about_us">СМИ о нас</a>
+                <a class="nav-link" href="#media_about_us">СМИ о нас</a>
             </nav>
         </div>
     </div>

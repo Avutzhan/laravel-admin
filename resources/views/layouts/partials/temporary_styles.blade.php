@@ -104,12 +104,12 @@
         height: 100%;
     }
 
-    .news > h4 {
+    .media_about_us > h4 {
         margin-top: 100px;
         margin-bottom: 50px;
     }
 
-    .news_header {
+    .media_about_us_header {
         margin-top: 100px;
         margin-bottom: 50px;
     }
