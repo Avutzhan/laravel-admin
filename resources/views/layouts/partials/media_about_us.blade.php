@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="row justify-content-between news_header">
                 <h4> СМИ О НАС </h4>
-                <button type="button" class="btn btn-primary">Подробнее</button>
+                <button type="button" class="btn btn-primary">Все новости</button>
             </div>
         </div>
 
