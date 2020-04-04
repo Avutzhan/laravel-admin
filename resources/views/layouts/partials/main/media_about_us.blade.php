@@ -3,7 +3,8 @@
         <div class="col-md-12">
             <div class="row justify-content-between media_about_us_header">
                 <h4> СМИ О НАС </h4>
-                <button type="button" class="btn btn-primary">Все новости</button>
+                <a href=" {{ route('news') }}"><button type="button" class="btn btn-primary">Все новости</button></a>
+
             </div>
         </div>
 

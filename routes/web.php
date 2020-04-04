@@ -19,4 +19,22 @@ Route::get('/about_technology', function () {
     return view('about_technology');
 })->name('about_technology');
 
+Route::get('/for_media', function () {
+    return view('for_media');
+})->name('for_media');
 
+Route::get('/news', function () {
+    return view('news');
+})->name('news');
+
+Route::get('/news_show', function () {
+    return view('layouts.partials.news.news_show');
+})->name('news_show');
+
+Route::get('/about_modex', function () {
+    return view('about_modex');
+})->name('about_modex');
+
+Route::get('/team', function () {
+    return view('team');
+})->name('team');

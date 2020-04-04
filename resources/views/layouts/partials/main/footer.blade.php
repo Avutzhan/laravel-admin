@@ -4,25 +4,25 @@
 
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Главная</a>
+                <a class="nav-link active" href="/">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">О ModeX</a>
+                <a class="nav-link" href="{{ route('about_modex') }}">О ModeX</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">О Технологии</a>
+                <a class="nav-link" href="{{ route('about_technology') }}">О Технологии</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Проекты</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Команда</a>
+                <a class="nav-link" href="{{ route('team') }}">Команда</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">СМИ о нас</a>
+                <a class="nav-link" href="{{ route('news') }}">СМИ о нас</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Для сми</a>
+                <a class="nav-link" href="{{ route('for_media') }}">Для сми</a>
             </li>
         </ul>
     </div>

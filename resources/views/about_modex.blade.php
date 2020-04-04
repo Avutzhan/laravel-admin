@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About Technology</title>
+    <title>About MODEX</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -29,14 +29,13 @@
 @endif
 <!--CONTAINER END-->
     <div class="container">
-    <!--HEADER NAVBAR-->
+        <!--HEADER NAVBAR-->
     @include('layouts.partials.main.header')
     <!--HEADER NAVBAR END-->
 
-
         <div class="row">
             <div class="col-md-12 construction_principles">
-                <h4> О ТЕХНОЛОГИИ </h4>
+                <h4> О ModeX </h4>
 
                 <div class="row">
                     <div class="col-md-4 construction_principles_items">
@@ -77,8 +76,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <!--FOOTER-->
     @include('layouts.partials.main.footer')
