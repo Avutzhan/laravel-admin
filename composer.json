@@ -13,7 +13,9 @@
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "mcamara/laravel-localization": "^1.5",
-        "starter-kit/core": "3.2.*"
+        "spatie/laravel-translation-loader": "^2.6",
+        "starter-kit/core": "3.2.*",
+        "starter-kit/news": "3.2.*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -25,7 +27,8 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "secure-http": false
     },
     "extra": {
         "laravel": {

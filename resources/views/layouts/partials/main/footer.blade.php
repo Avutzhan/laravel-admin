@@ -19,7 +19,7 @@
                 <a class="nav-link" href="{{ route('team') }}">Команда</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news') }}">СМИ о нас</a>
+                <a class="nav-link" href="{{ route('media_about_us') }}">СМИ о нас</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('for_media') }}">Для сми</a>
