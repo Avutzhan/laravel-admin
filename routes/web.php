@@ -42,17 +42,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     })->name('team');
 });
 
-//Route::group(['prefix' => config('project.admin_prefix') . '/news', 'as' => 'admin.news', 'middleware' => ['adminMiddleware']], function () {
-//    $c = 'Admin\NewsController@';
-//    Route::get('/', $c . 'index')->name('');
-//    Route::get('get-list', $c . 'getList')->name('.list');
-//    Route::get('create', $c . 'create')->name('.create');
-//    Route::post('store', $c . 'store')->name('.store');
-//    Route::get('{id}/edit', $c . 'edit')->name('.edit');
-//    Route::post('{id}/update', $c . 'update')->name('.update');
-//    Route::get('{id}/delete', $c . 'delete')->name('.delete');
-//});
-
 
 
 

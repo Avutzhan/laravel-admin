@@ -29,6 +29,35 @@
         @endif
         <!--CONTAINER END-->
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    @foreach($news as $item)
+
+                            <h1>{{ $item->title }}</h1>
+
+                            {!! $item->contents !!}
+
+                        @foreach($item->media as $imageda)
+                                <div class="col-md-2">
+                                    <img src=" {{ $imageda->url  }} " alt="" width="200">
+                                </div>
+                        @endforeach
+                    @endforeach
+
+                    @foreach($items as $row)
+                        <div class="row">
+                            {{ $row }}
+{{--                            @foreach($row as $media)--}}
+{{--                                    <div class="col-md-2">--}}
+{{--                                        <img src=" {{ $media->url  }} " alt="" width="200">--}}
+{{--                                    </div>--}}
+{{--                            @endforeach--}}
+                        </div>
+                    @endforeach
+                </div>
+            </div>
             <!--HEADER NAVBAR-->
             @include('layouts.partials.main.header')
             <!--HEADER NAVBAR END-->

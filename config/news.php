@@ -30,7 +30,7 @@ return [
 
         'create' => [
             'name' => 'admin.news.create',
-            'controller' => \StarterKit\News\Http\Controllers\NewsController::class,
+            'controller' => \App\Http\Controllers\Admin\AdminNewsController::class,
             'method' => 'create',
             'request_type' => 'get',
             'uri' => 'create',
@@ -50,7 +50,7 @@ return [
 
         'edit' => [
             'name' => 'admin.news.edit',
-            'controller' => \StarterKit\News\Http\Controllers\NewsController::class,
+            'controller' => \App\Http\Controllers\Admin\AdminNewsController::class,
             'method' => 'edit',
             'uri' => '{id}/edit',
             'request_type' => 'get',
