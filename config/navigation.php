@@ -24,18 +24,6 @@ return [
         'modules' => [
             'title' => 'Модули',
             'items' => [
-//                [
-//                    'is_tree' => false,
-//                    'title' => 'Новости',
-//                    'route_name' => 'admin.news',
-//                    'route_params' => '',
-//                    'item_active_on' => 'admin/news',
-//                    'icon' => 'la la-book',
-//                    'roles' => [
-//                        'admin',
-//                        'manager'
-//                    ]
-//                ],
                 [
                     'is_tree' => false,
                     'title' => 'Новости Шаблон',

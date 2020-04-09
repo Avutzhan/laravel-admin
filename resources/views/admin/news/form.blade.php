@@ -8,7 +8,6 @@
             </li>
         @endforeach
     </ul>
-
     <div class="tab-content">
         @foreach(config('project.locales') as $count => $locale)
             <div role="tabpanel" class="tab-pane @if($count == 0)  active  @endif " id="tab-{{ $count }}">
@@ -39,7 +38,6 @@
             </div>
         @endforeach
     </div>
-
     <div class="form-group">
         <fieldset>
             <legend>Настройки</legend>
@@ -56,34 +54,8 @@
             </div>
         </fieldset>
     </div>
-
     <button class="btn btn-sm btn-info" type="submit">{{$buttonText}}</button>
 </form>
-{{--@if(isset($item))--}}
-{{--    <br>--}}
-{{--    <br>--}}
-{{--    <fieldset>--}}
-{{--        <legend>Работа с иконкой продукта</legend>--}}
-{{--        <form action="{{ route('admin.what_is_esim.media', ['productId' => $item->id]) }}"--}}
-{{--              method="post"--}}
-{{--              id="formImage">--}}
-{{--            @csrf--}}
-{{--            <input type="file" name="image[]" class="form-input-image-media" style="display: none"--}}
-{{--                   accept="image/x-png,image/gif,image/jpeg,image/svg,image/svg+xml"--}}
-{{--                   multiple>--}}
-{{--            <button type="button" class="btn btn-success btn-sm add-photo">Добавить иконку</button>--}}
-{{--        </form>--}}
-{{--        <div class="media-block">--}}
-{{--            @foreach($medias as $row)--}}
-{{--                <div class="row">--}}
-{{--                    @foreach($row as $media)--}}
-{{--                        @include('backend.admin.what_is_esim.media.media_item')--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
-{{--    </fieldset>--}}
-{{--@endif--}}
 
 <script>
     $('.editor').each(function () {

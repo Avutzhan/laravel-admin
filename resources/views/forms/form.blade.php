@@ -11,7 +11,6 @@
                     </div>
                 </fieldset>
             @endif
-
             <ul class="nav nav-tabs" role="tablist">
                 @foreach(config('project.locales') as $count => $locale)
                     <li role="presentation" class="nav-item">
@@ -33,51 +32,17 @@
                                         <input type="text" class="form-control" id="title.{{ $locale }}" name="title[{{ $locale }}]" placeholder=""  @if(isset($item)) value="{{$item->getTranslation('title', $locale)}}" @endif>
                                         <p class="help-block"></p>
                                     </div>
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="slug">Машинное имя</label>--}}
-{{--                                        <input type="text" class="form-control" id="slug" name="slug" placeholder=""  @if(isset($item)) value="{{$item->slug}}" @endif disabled>--}}
-{{--                                        <p class="help-block"></p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="short_description.{{ $locale }}">Краткое описание</label>--}}
-{{--                                        <textarea id="short_description.{{ $locale }}" name="short_description[{{ $locale }}]"  class="form-control editor_short ">@if(isset($item)) {{$item->getTranslation('short_description', $locale)}} @endif</textarea>--}}
-{{--                                        <p class="help-block"></p>--}}
-{{--                                    </div>--}}
                                     <div class="form-group">
                                         <label for="contents.{{ $locale }}">Содержимое *</label>
                                         <textarea id="contents.{{ $locale }}" name="contents[{{ $locale }}]"  class="form-control editor ">@if(isset($item)) {{$item->getTranslation('contents', $locale)}} @endif</textarea>
                                         <p class="help-block"></p>
                                     </div>
                                 </fieldset>
-{{--                                <fieldset>--}}
-{{--                                    <legend>Seo настройки</legend>--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="seo_title.{{ $locale }}">Meta title</label>--}}
-{{--                                        <input type="text" class="form-control" id="seo_title.{{ $locale }}" name="seo_title[{{ $locale }}]" placeholder=""  @if(isset($item)) value="{{$item->getTranslation('seo_title', $locale)}}" @endif>--}}
-{{--                                        <p class="help-block"></p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="seo_description.{{ $locale }}">Meta description</label>--}}
-{{--                                        <input type="text" class="form-control" id="seo_description.{{ $locale }}" name="seo_description[{{ $locale }}]" placeholder=""  @if(isset($item)) value="{{$item->getTranslation('seo_description', $locale)}}" @endif>--}}
-{{--                                        <p class="help-block"></p>--}}
-{{--                                    </div>--}}
-{{--                                </fieldset>--}}
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-{{--            <fieldset>--}}
-{{--                <label for="category_id">Категория</label>--}}
-{{--                <select id="category_id" name="category_id" class="form-control">--}}
-{{--                    <option value="">Выбрать категорию</option>--}}
-{{--                    @foreach($categories as $key => $category)--}}
-{{--                        <option value="{{ $key }}"--}}
-{{--                                @if(isset($item) && $item->category_id == $key) selected @endif>{{ $category }}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--                <p class="help-block"></p>--}}
-{{--            </fieldset>--}}
             <fieldset>
                 <legend>Настройки</legend>
                 <div class="form-group">
@@ -105,7 +70,6 @@
     @if(isset($item))
     <div class="col-md-4">
         <fieldset>
-
             <legend>Изображения</legend>
             <form action="{{ route(config('news.routes.media.name'), ['newsId' => $item->id]) }}"
                   method="post"
@@ -116,7 +80,6 @@
                        multiple>
                 <button type="button" class="btn btn-success btn-sm add-photo">Добавить фото</button>
             </form>
-
             <div class="media-block">
                 @foreach($medias as $row)
                     <div class="row">

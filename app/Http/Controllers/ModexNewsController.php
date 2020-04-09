@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use StarterKit\Categories\Services\CategoriesService\CategoryService;
 use StarterKit\Core\Services\MediaService\MediaService;
-use StarterKit\News\Models\News;
 use StarterKit\News\UseCases\NewsCase;
 
-class MainController extends Controller
+class ModexNewsController extends Controller
 {
     /**
      * @var NewsCase
@@ -27,12 +26,21 @@ class MainController extends Controller
     public function index() {
         $news = $this->newsCase
             ->where('site_display', 1)
-            ->getCollection()
-            ->slice(0, 3);
+            ->getCollection();
 
-        return view('main.index', [
+        return view('news.index', [
+            'news' => $news,
+        ]);
+    }
+
+    public function show($id) {
+        $news = $this->newsCase
+            ->where('site_display', 1)
+            ->where('id', $id)
+            ->first();
+
+        return view('news.show', [
             'news' => $news,
         ]);
     }
 }
-

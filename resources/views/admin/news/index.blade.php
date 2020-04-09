@@ -10,7 +10,6 @@
                     </h3>
                 </div>
             </div>
-
             <div class="m-portlet__head-tools">
                 <ul class="m-portlet__nav">
                     <li class="m-portlet__nav-item">
@@ -27,7 +26,6 @@
                 </ul>
             </div>
         </div>
-
         <!--begin::Section-->
         <div class="m-section">
             <div class="m-section__content">
@@ -46,7 +44,6 @@
                     <tbody>
                     </tbody>
                 </table>
-
                 <div class="pagination_placeholder"></div>
             </div>
         </div>

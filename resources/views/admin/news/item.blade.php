@@ -1,6 +1,5 @@
 <tr class="row-{{ $item->id }}"  @if(isset($loop))data-index="{{$loop->iteration}}"@endif>
     <td class="text-center align-middle">{{ $item->id }}</td>
-
     <td class="align-middle">{{ $item->title}}</td>
     <td class="text-center align-middle">
         {!! $item->description !!}
@@ -13,7 +12,6 @@
         <a href="#" data-url="{{ route('admin.news.edit', ['id' => $item->id ]) }}" class="handle-click" data-type="modal" data-modal="largeModal">
             <i class="la la-edit"></i>
         </a>
-
         <a href="#" class="handle-click" data-type="confirm"
            title="Удалить продукт"
            data-title="Удаление"

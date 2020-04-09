@@ -1,9 +1,6 @@
 <div class="col-md-6 image-{{$media->id}}" style="margin-top: 5px;margin-bottom: 5px">
     <div class="text-center">
         <img style="max-width: 100%;" class="img-thumbnail media-item" src="{{$media->url}}" alt="нет медиа">
-        {{-- <a href="{{ route(config('news.routes.imageCrop.name'), ['newsId' => $media->id] ) }}" class="handle-click" data-type="modal" data-modal="editImageModal">
-            <img style="max-width: 100%;" class="img-thumbnail media-item" src="{{$media->original_file_name}}" alt="нет медиа">
-        </a> --}}
     </div>
     <div class="controls" style="margin-top: 10px;">
         <a style="text-decoration:none" href="#" class="delete-media-data btn btn-sm btn-danger pull-right" data-url="{{ route(config('news.routes.deleteMedia.name'),['newsId'=>$media->id]) }}" data-type="confirm" data-title="Удаление" data-message="Вы уверены, что хотите удалить"><i class="la la-trash-o"></i></a>

@@ -14,31 +14,31 @@
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-
+    //Main Route
     Route::get('/', 'MainController@index');
 
+    //About Technology Route
     Route::get('/about_technology', function () {
-        return view('about_technology');
+        return view('pages.about_technology');
     })->name('about_technology');
 
+    //For Media Route
     Route::get('/for_media', function () {
-        return view('for_media');
+        return view('pages.for_media');
     })->name('for_media');
 
-    Route::get('/media_about_us', function () {
-        return view('media_about_us');
-    })->name('media_about_us');
+    //News Route
+    Route::get('/news', 'ModexNewsController@index')->name('media_about_us');
+    Route::get('/news/{id}', 'ModexNewsController@show')->name('news_show');
 
-    Route::get('/news_show', function () {
-        return view('layouts.partials.news.news_show');
-    })->name('news_show');
-
+    //About Modex Route
     Route::get('/about_modex', function () {
-        return view('about_modex');
+        return view('pages.about_modex');
     })->name('about_modex');
 
+    //Team Route
     Route::get('/team', function () {
-        return view('team');
+        return view('pages.team');
     })->name('team');
 });
 
