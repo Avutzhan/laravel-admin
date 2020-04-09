@@ -29,7 +29,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     //News Route
     Route::get('/news', 'ModexNewsController@index')->name('media_about_us');
+
+//    Route::get('news/loaddata','ModexNewsController@loadData');
+    Route::post('news/loaddata','ModexNewsController@loadDataAjax' );
+
     Route::get('/news/{id}', 'ModexNewsController@show')->name('news_show');
+
+
 
     //About Modex Route
     Route::get('/about_modex', function () {

@@ -24,7 +24,8 @@ class MainController extends Controller
         $this->mediaService = $mediaService;
     }
 
-    public function index() {
+    public function index()
+    {
         $news = $this->newsCase
             ->where('site_display', 1)
             ->getCollection()

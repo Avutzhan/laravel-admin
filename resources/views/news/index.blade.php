@@ -8,10 +8,10 @@
     <!--HEADER NAVBAR END-->
 
         <div class="row" id="media_about_us">
-            <div class="col-md-12 media_about_us">
+            <div class="col-md-12 media_about_us" >
                 <h4> НОВОСТИ </h4>
 
-                <div class="row">
+                <div class="row" id="load-data">
 
                     @foreach($news as $item)
                         <div class="col-md-4 news_items">
@@ -23,11 +23,49 @@
                         </div>
                     @endforeach
 
+                    <div id="remove-row">
+                        <button id="btn-more" data-id="{{ $item->id }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
+                    </div>
                 </div>
+
+
             </div>
         </div>
+
+
+
 
     <!--FOOTER-->
     @include('main.partials.footer')
     <!--FOOTER END-->
+
+    <script>
+        $(document).ready(function(){
+            console.log('document ready');
+            $(document).on('click','#btn-more',function(){
+                console.log('ajax request sended');
+                var id = $(this).data('id');
+                $("#btn-more").html("Loading....");
+                $.ajax({
+                    url : '{{ url("news/loaddata") }}',
+                    method : "POST",
+                    data : {id:id, _token:"{{csrf_token()}}"},
+                    dataType : "text",
+                    success : function (data)
+                    {
+                        if(data != '')
+                        {
+                            $('#remove-row').remove();
+                            $('#load-data').append(data);
+                        }
+                        else
+                        {
+                            $('#btn-more').html("No Data");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 @endsection
