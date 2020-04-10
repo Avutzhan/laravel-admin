@@ -24,7 +24,7 @@
                     @endforeach
 
                     <div id="remove-row">
-                        <button id="btn-more" data-id="{{ $item->id }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
+                        <button id="btn-more" data-id="{{ $item->id }}" data-lang="{{ App::getLocale() }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
                     </div>
                 </div>
 
@@ -45,12 +45,15 @@
             $(document).on('click','#btn-more',function(){
                 console.log('ajax request sended');
                 var id = $(this).data('id');
+                var lang = $(this).data('lang');
                 $("#btn-more").html("Loading....");
+
                 $.ajax({
-                    url : '{{ url("news/loaddata") }}',
+                    url : '{{ url("/news/loaddata") }}',
                     method : "POST",
-                    data : {id:id, _token:"{{csrf_token()}}"},
+                    data : {id:id, lang:lang,_token:"{{csrf_token()}}"},
                     dataType : "text",
+
                     success : function (data)
                     {
                         if(data != '')
