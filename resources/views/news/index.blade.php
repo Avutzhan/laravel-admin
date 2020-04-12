@@ -23,17 +23,18 @@
                         </div>
                     @endforeach
 
-                    <div id="remove-row">
-                        <button id="btn-more" data-id="{{ $item->id }}" data-lang="{{ App::getLocale() }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
-                    </div>
-                </div>
+                    @if(count($news) == 3)
+                        <div class="col-md-12">
+                            <div id="remove-row">
+                                <button id="btn-more" data-id="{{ $item->id }}" data-lang="{{ App::getLocale() }}" class="nounderline btn-block mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" > Load More </button>
+                            </div>
+                        </div>
+                    @endif
 
+                </div>
 
             </div>
         </div>
-
-
-
 
     <!--FOOTER-->
     @include('main.partials.footer')
