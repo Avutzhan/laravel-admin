@@ -19,6 +19,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     //Main Route
     Route::get('/', 'MainController@index');
+    Route::get('/send-mail', 'MainController@send')->name('send_mail');
 
     //About Technology Route
     Route::get('/about_technology', function () {

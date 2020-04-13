@@ -2,7 +2,7 @@
 
 return [
 
-    'welcome' => 'welcome',
+    'welcome' => 'eto english locale',
     'news' => 'news',
 
 ];
