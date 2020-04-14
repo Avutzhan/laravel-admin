@@ -21,6 +21,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/', 'MainController@index');
     Route::get('/send-mail', 'MainController@send')->name('send_mail');
 
+    Route::resource('admin/call-back', 'Admin\CallBackController');
+    Route::get('admin/call-back/list', 'Admin\CallBackController@getList')->name('call-back.list');
     //About Technology Route
     Route::get('/about_technology', function () {
         return view('pages.about_technology');

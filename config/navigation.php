@@ -34,6 +34,17 @@ return [
                         'admin',
                         'manager'
                     ]
+                ],
+                [
+                    'is_tree' => false,
+                    'title' => 'Заказ Звонков',
+                    'route_name' => 'call-back.index',
+                    'item_active_on' => 'admin/news',
+                    'icon' => 'la la-bullhorn',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'roles' => [

@@ -12,7 +12,9 @@
 {{--                <p><input type="submit" /></p>--}}
 {{--            </form>--}}
             <div class="col-md-4">
-                <form action="{{ route('send_mail') }}" method="GET">
+{{--                <form action="{{ route('send_mail') }}" method="GET">--}}
+                <form action="{{ route('call-back.store') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group" style="margin-top: 0px">
                         <input type="text" name="name" class="form-control" placeholder="Ф.И.О.">
                     </div>
