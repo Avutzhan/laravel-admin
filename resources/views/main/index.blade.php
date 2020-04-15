@@ -3,6 +3,9 @@
 @section('title', 'Modex')
 
 @section('content')
+
+
+
     <!--HEADER NAVBAR-->
     @include('main.partials.header')
     <!--HEADER NAVBAR END-->
@@ -37,5 +40,7 @@
 
     <!--FOOTER-->
     @include('main.partials.footer')
+
+
     <!--FOOTER END-->
 @endsection
