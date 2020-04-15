@@ -19,10 +19,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     //Main Route
     Route::get('/', 'MainController@index');
-    Route::get('/send-mail', 'MainController@send')->name('send_mail');
 
     Route::resource('admin/call-back', 'Admin\CallBackController');
-    Route::get('admin/call-back/list', 'Admin\CallBackController@getList')->name('call-back.list');
+    Route::resource('admin/contacts', 'Admin\ContactController');
+
     //About Technology Route
     Route::get('/about_technology', function () {
         return view('pages.about_technology');
@@ -35,9 +35,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     //News Route
     Route::get('/news', 'ModexNewsController@index')->name('media_about_us');
-
     Route::post('/news/loaddata','ModexNewsController@loadDataAjax' );
-
     Route::get('/news/{id}', 'ModexNewsController@show')->name('news_show');
 
     //About Modex Route

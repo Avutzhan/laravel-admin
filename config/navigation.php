@@ -45,6 +45,17 @@ return [
                         'admin',
                         'manager'
                     ]
+                ],
+                [
+                    'is_tree' => false,
+                    'title' => 'Связаться со мной',
+                    'route_name' => 'contacts.index',
+                    'item_active_on' => 'admin/news',
+                    'icon' => 'la la-bullhorn',
+                    'roles' => [
+                        'admin',
+                        'manager'
+                    ]
                 ]
             ],
             'roles' => [

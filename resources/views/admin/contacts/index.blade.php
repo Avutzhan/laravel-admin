@@ -6,7 +6,7 @@
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
                     <h3 class="m-portlet__head-text">
-                        Заказ Звонков
+                        Связаться со мной
                     </h3>
                 </div>
             </div>
@@ -21,20 +21,22 @@
                                 <tr>
                                     <th class="text-center" width="50">#</th>
                                     <th>Имя</th>
-                                    <th class="text-center">Номер</th>
-                                    <th class="text-center">Дата</th>
-                                    <th class="text-center"><i class="fa fa-bars" aria-hidden="true"></i></th>
+                                    <th class="text-center" >Номер Телефона</th>
+                                    <th class="text-center" >Почта</th>
+                                    <th class="text-center">Комментарий</th>
+                                    <th class="text-center" width="100"><i class="fa fa-bars" aria-hidden="true"></i></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($calls as $call)
+                                @foreach($contacts as $contact)
                                     <tr>
-                                        <td class="text-center">{{ $call->id }}</td>
-                                        <td >{{ $call->name }}</td>
-                                        <td class="text-center">{{ $call->number }}</td>
-                                        <td class="text-center">{{ date('d.m.Y', strtotime($call->created_at)) }}</td>
+                                        <td class="text-center">{{ $contact->id }}</td>
+                                        <td >{{ $contact->name }}</td>
+                                        <td class="text-center">{{ $contact->number }}</td>
+                                        <td class="text-center">{{ $contact->email }}</td>
+                                        <td class="text-center">{{ $contact->comment }}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('call-back.destroy', ['call_back' => $call->id ]) }}" method="post">
+                                            <form action="{{ route('contacts.destroy', ['contact' => $contact->id ]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" style="border: none; background-color: white; color: #00F;">
