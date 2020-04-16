@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Call;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ContactController extends Controller
 {
+    use ValidatesRequests;
     /**
      * Display a listing of the resource.
      *
@@ -27,12 +29,18 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'number'=>'required',
+            'email'=>'required',
+            'comment'=>'required'
+        ]);
 
         $contact = new Contact([
             'name' => $request->get('name'),
             'number' => $request->get('number'),
             'email' => $request->get('email'),
-            'comment' => $request->get('body'),
+            'comment' => $request->get('comment'),
         ]);
 
         $contact->save();

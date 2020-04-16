@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Call;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Validator;
 
 class CallBackController extends Controller
 {
@@ -22,16 +23,36 @@ class CallBackController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'number' => 'required',
+        ]);
+
+        $request->validate([
+            'name'=>'required',
+            'number'=>'required'
+        ]);
+
         $contact = new Call([
             'name' => $request->get('name'),
             'number' => $request->get('number'),
         ]);
         $contact->save();
-        return redirect('/')->with('success', 'Contact saved!');
+
+        if ($validator->passes()) {
+
+            return response()->json(['success'=>trans('validation.success')]);
+        }
+
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+        //return response()->json(['success'=>'Form is successfully submitted!']);
+        //return redirect('/')->with('success', trans('validation.success'));
+        //return redirect('/')->with('success', trans('validation.success'));
     }
 
     /**

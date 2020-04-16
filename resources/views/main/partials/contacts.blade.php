@@ -25,10 +25,28 @@
                         <input type="number" name="number" class="form-control" placeholder="Телефон">
                     </div>
                     <div class="form-group">
-                        <textarea name="body" class="form-control" rows="6">Комментарии</textarea>
+                        <textarea name="comment" class="form-control" rows="6">Комментарии</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Отправить</button>
                 </form>
+                @if ($errors->any())
+                    <br>
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br />
+                @endif
+                                            <div class="col-sm-12">
+                                                @if(session()->get('success'))
+                                                    <br>
+                                                    <div class="alert alert-success">
+                                                        {{ session()->get('success') }}
+                                                    </div>
+                                                @endif
+                                            </div>
             </div>
         </div>
     </div>
