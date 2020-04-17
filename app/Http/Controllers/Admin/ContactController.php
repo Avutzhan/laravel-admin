@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Call;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ContactController extends Controller
@@ -25,10 +26,17 @@ class ContactController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'number' => 'required',
+            'email' => 'required',
+            'comment' => 'required',
+        ]);
+
         $request->validate([
             'name'=>'required',
             'number'=>'required',
@@ -45,7 +53,15 @@ class ContactController extends Controller
 
         $contact->save();
 
-        return redirect('/')->with('success', 'Contact saved!');
+        if ($validator->passes()) {
+
+            return response()->json(['success'=>trans('validation.success')]);
+        }
+
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+
+//        return redirect('/')->with('success', 'Contact saved!');
     }
 
     /**

@@ -269,6 +269,46 @@
                 });
             });
 
+            $('#contactsForm').on('submit',function(event){
+                event.preventDefault();
+
+                name = $('#contactsName').val();
+                email = $('#email').val();
+                number = $('#contactsNumber').val();
+                comment = $('#comment').val();
+
+                $.ajax({
+                    url: "{{ route('contacts.store') }}",
+                    type:"POST",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        name:name,
+                        email:email,
+                        number:number,
+                        comment:comment,
+                    },
+                    success:function(data){
+                        console.log('success');
+                        if($.isEmptyObject(data.error)){
+
+                            console.log('success');
+                            printSuccessMsg(data.success);
+
+                        }else{
+                            console.log('failed');
+                            printErrorMsg(data.error);
+                        }
+                    },
+                    error: function(xhr)
+                    {
+                        var jsonData = xhr.responseJSON;
+                        var msg = jsonData.errors;
+                        printErrorMsg(msg);
+                        console.log('failed');
+                    },
+                });
+            });
+
             function printErrorMsg (msg) {
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display','block');
@@ -278,7 +318,7 @@
             }
 
             function printSuccessMsg (msg) {
-                $('form input[type="text"], form input[type="number"]').val('');
+                $('form input[type="text"], form input[type="email"], form input[type="number"], form textarea').val('');
                 $(".print-error-msg").css('display','none');
                 $(".print-success-msg").find("ul").html('');
                 $(".print-success-msg").css('display','block');
