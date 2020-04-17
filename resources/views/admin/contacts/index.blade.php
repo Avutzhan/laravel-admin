@@ -36,7 +36,7 @@
                                         <td class="text-center">{{ $contact->email }}</td>
                                         <td class="text-center">{{ $contact->comment }}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('contacts.destroy', ['contact' => $contact->id ]) }}" method="post">
+                                            <form onclick="confirm('Are you sure?')" action="{{ route('contacts.destroy', ['contact' => $contact->id ]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" style="border: none; background-color: white; color: #00F;">

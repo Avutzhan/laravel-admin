@@ -34,7 +34,7 @@
                                         <td class="text-center">{{ $call->number }}</td>
                                         <td class="text-center">{{ date('d.m.Y', strtotime($call->created_at)) }}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('call-back.destroy', ['call_back' => $call->id ]) }}" method="post">
+                                            <form onclick="confirm('Are you sure?')" action="{{ route('call-back.destroy', ['call_back' => $call->id ]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" style="border: none; background-color: white; color: #00F;">

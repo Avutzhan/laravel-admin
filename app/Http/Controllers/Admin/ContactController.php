@@ -78,6 +78,6 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $contact->delete();
 
-        return redirect('/admin/call-back')->with('success', 'Contact deleted!');
+        return redirect('/admin/contacts')->with('success', 'Contact deleted!');
     }
 }
