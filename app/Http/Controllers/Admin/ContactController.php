@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Call;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -19,6 +20,10 @@ class ContactController extends Controller
      */
     public function index()
     {
+        if (Auth::guard('admins')->guest()) {
+            return redirect()->route('admin.get.login');
+        }
+
         $contacts = Contact::orderBy('id', 'desc')
             ->paginate(10);
         return view('admin.contacts.index')->withContacts($contacts);

@@ -6,16 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Models\Call;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CallBackController extends Controller
 {
     use ValidatesRequests;
+
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
+        //dd('test');
+        if (Auth::guard('admins')->guest()) {
+            return redirect()->route('admin.get.login');
+        }
+
         $calls = Call::orderBy('id', 'desc')
             ->paginate(10);
         return view('admin.calls.index')->withCalls($calls);
