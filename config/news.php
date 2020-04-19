@@ -5,7 +5,7 @@ return [
     'middleware' => ['web', 'adminMiddleware'],
     'guard' => 'admins',
     'pagination' => [
-        'news' => 9,
+        'news' => 5,
     ],
 
 

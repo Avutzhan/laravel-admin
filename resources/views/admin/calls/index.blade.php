@@ -62,13 +62,17 @@
 {{--                                        </td>--}}
                                     </tr>
                                 @endforeach
+
+
                                 </tbody>
                             </table>
 
             </div>
         </div>
+
         <!--end::Section-->
     </div>
+    {!! $calls->links() !!}
 @stop
 
 

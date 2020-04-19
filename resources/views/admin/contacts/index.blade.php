@@ -71,6 +71,7 @@
         </div>
         <!--end::Section-->
     </div>
+    {!! $contacts->links() !!}
 @stop
 
 

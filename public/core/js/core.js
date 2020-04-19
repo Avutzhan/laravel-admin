@@ -62,13 +62,13 @@ $(document.body).on('change', 'input[type=file]', function (e) {
 });
 
 
-$(document.body).on('click', '.pagination .page-link', function (e) {
-    e.preventDefault();
-    let url = $(this).attr('href');
-    app.functions.blockPage();
-    app.functions.loadContentInTable({url: url});
-    app.functions.unblockPage()
-});
+// $(document.body).on('click', '.pagination .page-link', function (e) {
+//     e.preventDefault();
+//     let url = $(this).attr('href');
+//     app.functions.blockPage();
+//     app.functions.loadContentInTable({url: url});
+//     app.functions.unblockPage()
+// });
 
 
 $(document).ready(function () {

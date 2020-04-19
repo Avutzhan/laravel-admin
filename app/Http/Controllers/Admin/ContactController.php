@@ -13,10 +13,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class ContactController extends Controller
 {
     use ValidatesRequests;
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
